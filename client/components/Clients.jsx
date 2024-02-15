@@ -1,33 +1,35 @@
 import { getClient } from "@/lib/client";
-import { gql } from "@apollo/client";
-
-const GET_CLIENTS = gql`
-  query GetClients {
-    clients {
-      id
-      name
-      email
-      phone
-    }
-  }
-`;
+import ClientRow from "./ClientRow";
+import { GET_CLIENTS } from "@/queries/clientQueries";
 
 export default async function Clients() {
   const { loading, data, error } = await getClient().query({
     query: GET_CLIENTS,
   });
-  console.log("data:", data);
+
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>Something Went Wrong</p>;
   return (
-    <main>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error.message}</p>}
-      {data?.clients.map((client) => (
-        <div key={client.id}>
-          <h3>{client.name}</h3>
-          <p>{client.email}</p>
-          <p>{client.phone}</p>
+    <>
+      {!loading && !error && (
+        <div className="table-responsive">
+          <table className="table table-hover mt-3">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.clients.map((client) => (
+                <ClientRow key={client.id} client={client} />
+              ))}
+            </tbody>
+          </table>
         </div>
-      ))}
-    </main>
+      )}
+    </>
   );
 }
