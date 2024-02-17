@@ -8,7 +8,7 @@ export default function ProjectCard({ project }) {
           <div className="d-flex justify-content-between align-items-center">
             <h5 className="card-title">{project.name}</h5>
 
-            <Link href={`/projects/${project.id}`}>
+            <Link href={`/project/${project.id}`}>
               <button className="btn btn-sm btn-outline-success">
                 Visit Project
               </button>
