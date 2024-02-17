@@ -93,7 +93,17 @@ const Mutation = new GraphQLObjectType({
     deleteClient: {
       type: ClientType,
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },
-      resolve(parent, args) {
+      async resolve(parent, args) {
+        // Retrieve projects associated with the client ID
+        const projects = await Project.find({ clientId: args.id });
+        console.log("projects found", projects);
+        // Use async/await to wait for all projects to be deleted
+        for (let project of projects) {
+          console.log("project found - attempteting to delete", project.name);
+          await Project.deleteOne({ _id: project.id });
+        }
+
+        // Finally, delete the client and return the result
         return Client.findByIdAndDelete(args.id);
       },
     },
