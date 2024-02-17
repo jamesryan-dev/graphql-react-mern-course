@@ -82,7 +82,7 @@ export default function AddClientModal() {
               </h5>
               <button
                 type="button"
-                className="btn-close"
+                className="btn-close btn-close-white"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
@@ -119,7 +119,7 @@ export default function AddClientModal() {
                     onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
-                <button type="submit" className="btn btn-secondary">
+                <button type="submit" className="btn btn-success">
                   Submit
                 </button>
               </form>

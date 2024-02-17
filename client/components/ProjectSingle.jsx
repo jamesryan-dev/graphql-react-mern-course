@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { GET_PROJECT } from "@/queries/projectQueries";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Link from "next/link";
+import ClientInfo from "./ClientInfo";
 
 export default function ProjectSingle({ projectId, data }) {
   console.log("projectId", projectId);
@@ -21,9 +22,9 @@ export default function ProjectSingle({ projectId, data }) {
         <h5 className="mt-3">Project Status</h5>
         <p className="lead">{data.project.status}</p>
 
-        {/* <ClientInfo client={data.project.client} />
+        <ClientInfo client={data.project.client} />
 
-        <EditProjectForm project={data.project} />
+        {/* <EditProjectForm project={data.project} />
 
         <DeleteProjectButton projectId={data.project.id} /> */}
       </div>

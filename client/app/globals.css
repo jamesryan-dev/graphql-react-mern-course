@@ -163,6 +163,7 @@ code {
   background-color: #1c1c23 !important
 }
 
+
 h2 {
   color: white !important;
   opacity: 0.888;
@@ -170,4 +171,33 @@ h2 {
 
 .extra-small {
   font-size: 12px;
+}
+
+
+.modal-dialog {
+  height: 90vh;
+    width: 90vh;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.modal label,
+.modal-title {
+  color: white;
+}
+
+.modal select,
+.modal input,
+.modal textarea,
+.modal textarea:focus,
+.modal input:focus {
+  background-color: #1c1c23;
+  color: white;
+  border: 1px solid #141414;
+}
+
+.modal-header {
+  border-bottom-color: #515151 !important;
 }
