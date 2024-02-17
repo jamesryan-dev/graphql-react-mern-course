@@ -5,13 +5,14 @@ import { GET_PROJECT } from "@/queries/projectQueries";
 import { useSuspenseQuery } from "@apollo/experimental-nextjs-app-support/ssr";
 import Link from "next/link";
 import ClientInfo from "./ClientInfo";
+import DeleteProjectButton from "./DeleteProjectButton";
 
 export default function ProjectSingle({ projectId, data }) {
   console.log("projectId", projectId);
 
   return (
-    <div>
-      <div className="mx-auto w-75 card p-5">
+    <div className="">
+      <div className="text-bg-dark mx-auto w-75 card p-5">
         <Link href="/" className="btn btn-light btn-sm w-25 d-inline ms-auto">
           Back
         </Link>
@@ -24,9 +25,9 @@ export default function ProjectSingle({ projectId, data }) {
 
         <ClientInfo client={data.project.client} />
 
-        {/* <EditProjectForm project={data.project} />
+        {/* <EditProjectForm project={data.project} /> */}
 
-        <DeleteProjectButton projectId={data.project.id} /> */}
+        <DeleteProjectButton projectId={data.project.id} />
       </div>
     </div>
   );

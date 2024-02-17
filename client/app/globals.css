@@ -201,3 +201,7 @@ h2 {
 .modal-header {
   border-bottom-color: #515151 !important;
 }
+
+.pl-2 {
+  padding-left: 0.5rem !important;
+}
