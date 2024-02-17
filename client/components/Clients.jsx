@@ -22,7 +22,7 @@ export default function Clients() {
       <AddClientModal />
       {!loading && !error && (
         <div className="table-responsive">
-          <table className="table table-hover mt-3 table-dark table-striped">
+          <table className="table table-hover mt-3 table-dark table-striped rounded">
             <thead>
               <tr>
                 <th>Name</th>

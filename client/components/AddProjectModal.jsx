@@ -138,7 +138,7 @@ export default function AddProjectModal() {
                 <button
                   type="submit"
                   data-bs-dismiss="modal"
-                  className="btn btn-success"
+                  className="btn btn-success w-100"
                 >
                   Submit
                 </button>

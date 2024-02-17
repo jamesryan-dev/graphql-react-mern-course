@@ -28,7 +28,7 @@ export default function DeleteProjectButton({ projectId }) {
       className="btn btn-outline-danger btn-sm d-flex justify-content-center align-items-center"
     >
       <FaTrash />
-      <span className="pl-2">Delete project</span>
+      <span className="pl-2">Delete</span>
     </button>
   );
 }
