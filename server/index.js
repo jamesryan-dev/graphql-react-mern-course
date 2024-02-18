@@ -4,8 +4,8 @@ const cors = require("cors");
 const colors = require("colors");
 require("dotenv").config();
 const { graphqlHTTP } = require("express-graphql");
-const schema = require("../schema/schema"); // Adjust the path as necessary
-const connectDB = require("../config/db"); // Adjust the path as necessary
+const schema = require("./schema/schema"); // Adjust the path as necessary
+const connectDB = require("./config/db"); // Adjust the path as necessary
 
 const app = express();
 
